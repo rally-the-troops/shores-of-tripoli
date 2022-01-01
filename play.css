@@ -32,6 +32,12 @@ body.Observer .hand_separator { display: none; }
 	width: 250px;
 	height: 350px;
 	border-radius: 12px;
+	display: none;
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.card.show {
+	display: block;
 }
 
 .card.blank {

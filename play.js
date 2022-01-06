@@ -1,7 +1,5 @@
 "use strict";
 
-/* global game, PIECES, SPACES */
-
 const SEASON_X = [ 893, 978, 1064, 1149 ];
 const YEAR_X = { 1801: 175, 1802: 294, 1803: 413, 1804: 532, 1805: 652, 1806: 771 };
 const YEAR_Y = 728;
@@ -172,11 +170,11 @@ function on_click_space(evt) { send_action('space', evt.target.space); }
 function on_click_piece(evt) { send_action('piece', evt.target.piece); }
 
 function on_focus_active_card(evt) {
-	if (typeof game.card === 'number') {
-		if (game.card < 27)
-			document.getElementById("tooltip").className = "card show us_card_" + game.card;
+	if (typeof view.card === 'number') {
+		if (view.card < 27)
+			document.getElementById("tooltip").className = "card show us_card_" + view.card;
 		else
-			document.getElementById("tooltip").className = "card show tr_card_" + (game.card-27);
+			document.getElementById("tooltip").className = "card show tr_card_" + (view.card-27);
 	}
 }
 
@@ -237,9 +235,9 @@ const CARD_ACTIONS = [
 ];
 
 function is_card_enabled(c) {
-	if (game.actions)
+	if (view.actions)
 		for (let a of CARD_ACTIONS)
-			if (game.actions[a] && game.actions[a].includes(c))
+			if (view.actions[a] && view.actions[a].includes(c))
 				return true;
 	return false;
 }
@@ -257,12 +255,12 @@ function update_card(c, show) {
 
 function update_cards() {
 	for (let i = 1; i <= 3; ++i) {
-		update_card(i, game.core.includes(i));
-		update_card(i+27, game.core.includes(i+27));
+		update_card(i, view.core.includes(i));
+		update_card(i+27, view.core.includes(i+27));
 	}
 	for (let i = 4; i <= 27; ++i) {
-		update_card(i, game.hand.includes(i));
-		update_card(i+27, game.hand.includes(i+27));
+		update_card(i, view.hand.includes(i));
+		update_card(i+27, view.hand.includes(i+27));
 	}
 }
 
@@ -270,17 +268,17 @@ function update_cards() {
 
 function tr_info() {
 	let text = "";
-	text += "Hand: " + game.tr.hand + " / ";
-	text += "Draw: " + game.tr.draw + " / ";
-	text += "Discard: " + game.tr.discard + "\n";
+	text += "Hand: " + view.tr.hand + " / ";
+	text += "Draw: " + view.tr.draw + " / ";
+	text += "Discard: " + view.tr.discard + "\n";
 	return text;
 }
 
 function us_info() {
 	let text = "";
-	text += "Hand: " + game.us.hand + " / ";
-	text += "Draw: " + game.us.draw + " / ";
-	text += "Discard: " + game.us.discard + "\n";
+	text += "Hand: " + view.us.hand + " / ";
+	text += "Draw: " + view.us.draw + " / ";
+	text += "Discard: " + view.us.discard + "\n";
 	return text;
 }
 
@@ -289,24 +287,24 @@ function on_update() {
 	action_button("next", "Next");
 	action_button("undo", "Undo");
 
-	document.getElementById("tr_score").textContent = game.tr.score;
-	document.getElementById("us_score").textContent = game.us.score;
+	document.getElementById("tr_score").textContent = view.tr.score;
+	document.getElementById("us_score").textContent = view.us.score;
 	document.getElementById("tr_info").textContent = tr_info();
 	document.getElementById("us_info").textContent = us_info();
 
-	if (game.card === undefined)
+	if (view.card === undefined)
 		document.getElementById("active_card").className = "card show blank";
-	else if (game.card === "United States")
+	else if (view.card === "United States")
 		document.getElementById("active_card").className = "card show us_card_back";
-	else if (game.card === "Tripolitania")
+	else if (view.card === "Tripolitania")
 		document.getElementById("active_card").className = "card show tr_card_back";
-	else if (game.card < 27)
-		document.getElementById("active_card").className = "card show us_card_" + game.card;
+	else if (view.card < 27)
+		document.getElementById("active_card").className = "card show us_card_" + view.card;
 	else
-		document.getElementById("active_card").className = "card show tr_card_" + (game.card-27);
+		document.getElementById("active_card").className = "card show tr_card_" + (view.card-27);
 
-	update_year_marker(game.year);
-	update_season_marker(game.season);
+	update_year_marker(view.year);
+	update_season_marker(view.season);
 	update_gold();
 	update_pieces();
 	update_cards();
@@ -390,41 +388,41 @@ function layout_space(location, s, x0, y0, size) {
 }
 
 function update_pieces() {
-	layout_space(game.location, UNITED_STATES_SUPPLY, 1933, 180, 6);
-	layout_space(game.location, TRIPOLITAN_SUPPLY, 2195, 180, 6);
+	layout_space(view.location, UNITED_STATES_SUPPLY, 1933, 180, 6);
+	layout_space(view.location, TRIPOLITAN_SUPPLY, 2195, 180, 6);
 
-	layout_space(game.location, TRACK_1801, YEAR_X[1801], 625, 2);
-	layout_space(game.location, TRACK_1802, YEAR_X[1802], 625, 2);
-	layout_space(game.location, TRACK_1803, YEAR_X[1803], 625, 2);
-	layout_space(game.location, TRACK_1804, YEAR_X[1804], 625, 2);
-	layout_space(game.location, TRACK_1805, YEAR_X[1805], 625, 2);
-	layout_space(game.location, TRACK_1806, YEAR_X[1806], 625, 2);
+	layout_space(view.location, TRACK_1801, YEAR_X[1801], 625, 2);
+	layout_space(view.location, TRACK_1802, YEAR_X[1802], 625, 2);
+	layout_space(view.location, TRACK_1803, YEAR_X[1803], 625, 2);
+	layout_space(view.location, TRACK_1804, YEAR_X[1804], 625, 2);
+	layout_space(view.location, TRACK_1805, YEAR_X[1805], 625, 2);
+	layout_space(view.location, TRACK_1806, YEAR_X[1806], 625, 2);
 
-	layout_space(game.location, ALEXANDRIA, 2335, 454, 3);
-	layout_space(game.location, ALGIERS, 883, 318, 3);
-	layout_space(game.location, BENGHAZI, 1877, 583, 3);
-	layout_space(game.location, DERNE, 2030, 437, 3);
-	layout_space(game.location, GIBRALTAR, 374, 216, 3);
-	layout_space(game.location, MALTA, 1592, 189, 3);
-	layout_space(game.location, TANGIER, 296, 426, 3);
-	layout_space(game.location, TRIPOLI, 1416, 604, 5);
-	layout_space(game.location, TUNIS, 1232, 278, 3);
+	layout_space(view.location, ALEXANDRIA, 2335, 454, 3);
+	layout_space(view.location, ALGIERS, 883, 318, 3);
+	layout_space(view.location, BENGHAZI, 1877, 583, 3);
+	layout_space(view.location, DERNE, 2030, 437, 3);
+	layout_space(view.location, GIBRALTAR, 374, 216, 3);
+	layout_space(view.location, MALTA, 1592, 189, 3);
+	layout_space(view.location, TANGIER, 296, 426, 3);
+	layout_space(view.location, TRIPOLI, 1416, 604, 5);
+	layout_space(view.location, TUNIS, 1232, 278, 3);
 
-	layout_space(game.location, ALGIERS_PATROL_ZONE, 875, 170, 3);
-	layout_space(game.location, GIBRALTAR_PATROL_ZONE, 560, 245, 3);
-	layout_space(game.location, TANGIER_PATROL_ZONE, 125, 410, 3);
-	layout_space(game.location, TRIPOLI_PATROL_ZONE, 1575, 420, 5);
-	layout_space(game.location, TUNIS_PATROL_ZONE, 1300, 130, 3);
+	layout_space(view.location, ALGIERS_PATROL_ZONE, 875, 170, 3);
+	layout_space(view.location, GIBRALTAR_PATROL_ZONE, 560, 245, 3);
+	layout_space(view.location, TANGIER_PATROL_ZONE, 125, 410, 3);
+	layout_space(view.location, TRIPOLI_PATROL_ZONE, 1575, 420, 5);
+	layout_space(view.location, TUNIS_PATROL_ZONE, 1300, 130, 3);
 
 	for (let p of FRIGATES) {
-		if (game.damaged.includes(p))
+		if (view.damaged.includes(p))
 			ui.pieces[p].classList.add("damaged");
 		else
 			ui.pieces[p].classList.remove("damaged");
 	}
 
 	for (let p = 0; p < PIECES.length; ++p) {
-		if (game.actions && game.actions.piece && game.actions.piece.includes(p))
+		if (view.actions && view.actions.piece && view.actions.piece.includes(p))
 			ui.pieces[p].classList.add("highlight");
 		else
 			ui.pieces[p].classList.remove("highlight");
@@ -432,7 +430,7 @@ function update_pieces() {
 }
 
 function update_gold() {
-	let split = 12 - game.tr.gold;
+	let split = 12 - view.tr.gold;
 	let x, y;
 	x = 690;
 	y = 50;
@@ -453,11 +451,11 @@ function update_spaces() {
 		ui.spaces[space].classList.remove('highlight');
 		ui.spaces[space].classList.remove('where');
 	}
-	if (game.where !== null) {
-		ui.spaces[game.where].classList.add('where');
+	if (view.where !== null) {
+		ui.spaces[view.where].classList.add('where');
 	}
-	if (game.actions && game.actions.space) {
-		for (let space of game.actions.space) {
+	if (view.actions && view.actions.space) {
+		for (let space of view.actions.space) {
 			ui.spaces[space].classList.add('highlight');
 		}
 	}
@@ -520,11 +518,11 @@ function on_card_build_corsair() {
 }
 
 function is_card_action(action, card) {
-	return game.actions && game.actions[action] && game.actions[action].includes(card);
+	return view.actions && view.actions[action] && view.actions[action].includes(card);
 }
 
 function on_click_card(evt) {
-	if (game.actions) {
+	if (view.actions) {
 		let card = evt.target.card;
 		if (is_card_action('discard', card)) {
 			send_action('discard', card);
@@ -548,5 +546,3 @@ function on_click_card(evt) {
 
 build_map();
 scroll_with_middle_mouse("main");
-init_map_zoom();
-init_client([ "United States", "Tripolitania" ]);

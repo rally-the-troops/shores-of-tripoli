@@ -4,8 +4,8 @@ header { background-color: silver; }
 .card_info { background-color: silver; }
 body.Tripolitania header.your_turn { background-color: salmon; }
 body.United_States header.your_turn { background-color: skyblue; }
-.one .role_name { background-color: skyblue; }
-.two .role_name { background-color: salmon; }
+#role_United_States .role_name { background-color: skyblue; }
+#role_Tripolitania .role_name { background-color: salmon; }
 
 #log { background-color: #eee; }
 #log .st { background-color: #777; color: white; font-weight: bold; padding:3px; text-align: center; }

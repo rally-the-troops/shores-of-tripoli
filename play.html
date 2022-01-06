@@ -7,10 +7,9 @@
 <title>SHORES OF TRIPOLI</title>
 <link rel="icon" href="Flag_of_Tripoli_18th_century.svg">
 <link rel="stylesheet" href="/fonts/fonts.css">
-<link rel="stylesheet" href="/common/grid.css">
+<link rel="stylesheet" href="/common/play.css">
 <link rel="stylesheet" href="play.css">
-<script defer src="/socket.io/socket.io.min.js"></script>
-<script defer src="/common/client.js"></script>
+<script defer src="/common/play.js"></script>
 <script defer src="data.js"></script>
 <script defer src="play.js"></script>
 </head>
@@ -49,7 +48,7 @@
 
 <aside>
 	<div id="roles">
-		<div class="role one">
+		<div class="role" id="role_United_States">
 			<div class="role_name">
 				United States
 				<div class="role_vp" id="us_score">30</div>
@@ -57,7 +56,7 @@
 			</div>
 			<div class="role_info" id="us_info">Hand: X / Draw: X / Discard: X</div>
 		</div>
-		<div class="role two">
+		<div class="role" id="role_Tripolitania">
 			<div class="role_name">
 				Tripolitania
 				<div class="role_vp" id="tr_score">0</div>

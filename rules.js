@@ -1838,7 +1838,6 @@ states.yusuf_qaramanli = {
 		view.prompt += " Select a harbor with corsairs to pirate raid from."
 			for (let space of game.raids)
 				gen_action(view, 'space', space);
-		gen_action(view, 'next');
 	},
 	space: function (space) {
 		log("");
@@ -1851,10 +1850,6 @@ states.yusuf_qaramanli = {
 		case TRIPOLI: return goto_pirate_raid(TRIPOLI);
 		}
 	},
-	next: function () {
-		delete game.raids;
-		end_tripolitan_play();
-	}
 }
 
 function can_play_murad_reis_breaks_out() {

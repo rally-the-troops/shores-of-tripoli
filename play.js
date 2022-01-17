@@ -388,7 +388,7 @@ function layout_space(location, s, x0, y0, size) {
 }
 
 function update_pieces() {
-	layout_space(view.location, UNITED_STATES_SUPPLY, 1933, 180, 6);
+	layout_space(view.location, UNITED_STATES_SUPPLY, 1933, 180, 5);
 	layout_space(view.location, TRIPOLITAN_SUPPLY, 2195, 180, 6);
 
 	layout_space(view.location, TRACK_1801, YEAR_X[1801], 625, 2);

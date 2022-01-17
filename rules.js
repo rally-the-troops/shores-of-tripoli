@@ -1422,7 +1422,7 @@ states.allocate_tr_hits = {
 }
 
 function move_damaged_frigate_to_year_track(p, supply) {
-	if (game.year === 1806)
+	if (game.year === 1806 || game.active_card === ASSAULT_ON_TRIPOLI)
 		game.location[p] = supply;
 	else
 		game.location[p] = YEAR_TURN_TRACK[game.year + 1];
@@ -1457,6 +1457,11 @@ function resume_naval_battle() {
 			log("The Tripolitan fleet has been eliminated.");
 			move_all_pieces(US_MARINES, BENGHAZI, TRIPOLI);
 			move_all_pieces(AR_INFANTRY, BENGHAZI, TRIPOLI);
+
+			game.summary = [];
+			remove_damaged_frigates();
+			flush_summary("Ships damaged:", true)
+
 			if (is_naval_bombardment_location(game.where)) {
 				naval_bombardment_round();
 				game.state = 'land_battle_bombardment_results';

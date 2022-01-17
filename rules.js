@@ -10,6 +10,7 @@ const { SPACES, PIECES } = require('./data');
 
 exports.scenarios = [
 	"Standard",
+	"Fortress Tripoli"
 ];
 
 function get_piece_id(name) {
@@ -1207,6 +1208,7 @@ function end_naval_bombardment() {
 function goto_naval_battle(space) {
 	game.save_active = game.active;
 	game.where = space;
+	game.round = 0;
 	log("Naval battle in " + SPACES[game.where] + ".");
 	goto_naval_battle_american_card();
 }
@@ -1273,6 +1275,7 @@ states.naval_battle_tripolitan_card = {
 
 function goto_naval_battle_round() {
 	game.active = game.save_active;
+	game.round ++;
 
 	let n_us_frigates = count_american_frigates(game.where);
 	let n_us_gunboats = count_american_gunboats(game.where);
@@ -1290,6 +1293,8 @@ function goto_naval_battle_round() {
 	game.n_us_hits = 0;
 	if (game.the_guns_of_tripoli)
 		game.n_us_hits += roll_many_dice("The Guns of Tripoli:\n", 12, 6);
+	if (game.fortress && game.where === TRIPOLI && game.round === 1)
+		game.n_us_hits += roll_many_dice("Fortress Tripoli:\n", 6, 6);
 	game.n_us_hits += roll_many_dice("Tripolitan frigates:\n", n_tr_frigates * 2, 6);
 	game.n_us_hits += roll_many_dice("Tripolitan corsairs:\n", n_tr_corsairs, 6);
 	game.n_us_hits += roll_many_dice("Allied corsairs:\n", n_al_corsairs, 6);
@@ -1559,6 +1564,7 @@ states.land_battle_bombardment_results = {
 }
 
 function goto_land_battle() {
+	game.round = 0;
 	move_all_pieces(US_FRIGATES, game.where, MALTA);
 	move_all_pieces(US_GUNBOATS, game.where, MALTA);
 	goto_land_battle_american_card();
@@ -1665,6 +1671,7 @@ states.mercenaries_desert_results = {
 function goto_land_battle_round() {
 	delete game.flash;
 	game.active = US;
+	game.round ++;
 
 	let n_us_mar = count_american_marines(game.where);
 	let n_ar_inf = count_arab_infantry(game.where);
@@ -1705,6 +1712,9 @@ function goto_land_battle_round() {
 	n_tr_hits += roll_many_dice("Arab infantry: ", n_ar_inf);
 
 	let n_us_hits = roll_many_dice("Tripolitan infantry: ", n_tr_inf);
+
+	if (game.fortress && game.where === TRIPOLI && game.round === 1)
+		n_us_hits += roll_many_dice("Fortress Tripoli: ", 6, 6);
 
 	game.flash = apply_tr_hits(n_tr_hits) + apply_us_hits(n_us_hits);
 	log("Losses: " + game.flash + ".");
@@ -2802,6 +2812,9 @@ exports.setup = function (seed, scenario, options) {
 		undo: [],
 	};
 
+	if (scenario === "Fortress Tripoli")
+		game.fortress = 1;
+
 	if (typeof scenario === 'number')
 		game.year = scenario;
 
@@ -2923,7 +2936,7 @@ exports.view = function(state, current) {
 			draw: game.us.draw.length,
 			discard: game.us.discard.length + (game.us.queue ? game.us.queue.length : 0),
 			hand: game.us.hand.length,
-			score: 30 - tr_score,
+			score: 25 - tr_score,
 		},
 		card: game.active_card,
 		where: game.where,

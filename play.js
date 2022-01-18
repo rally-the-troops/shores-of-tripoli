@@ -133,10 +133,16 @@ create_log_entry = function (text) {
 	text = text.replace(/\u201c(.*)\u201d/g, sub_log_entry_tip);
 	if (text.match(/^Start of \d+/)) {
 		text = text.substring(9, text.length-1);
-		p.className = 'st';
+		p.className = 'year';
 	} else if (text.match(/^Start of /)) {
 		text = text.substring(9, text.length-1);
-		p.className = 'ss';
+		p.className = 'season';
+	} else if (text.match(/^Pirate raid from/)) {
+		p.className = 'raid';
+	} else if (text.match(/^(Naval|Land) (battle|bombardment) in/)) {
+		p.className = 'battle';
+	} else if (text.match(/^(Naval|Land) battle (round)/)) {
+		p.className = 'round';
 	} else if (text.match(/(victory:|ends in a draw)/)) {
 		p.className = 'end';
 	}

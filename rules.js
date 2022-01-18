@@ -272,6 +272,10 @@ function log(...args) {
 	game.log.push(s);
 }
 
+function log_blank() {
+	game.log.push("");
+}
+
 function flush_summary(text, add_plural_s=false) {
 	game.summary.sort();
 	let last = game.summary[0];
@@ -595,7 +599,7 @@ function can_pirate_raid_from_tripoli() {
 
 function start_of_year() {
 	log("Start of " + game.year + ".");
-	log("");
+	log_blank();
 
 	game.season = SPRING;
 
@@ -732,16 +736,16 @@ states.hand_size = {
 }
 
 function goto_american_play() {
-	log("");
+	log_blank();
 	log("Start of " + SEASON_NAMES[game.season] + ".");
-	log("");
+	log_blank();
 
 	game.active = US;
 	game.state = 'american_play';
 }
 
 function end_american_play() {
-	log("");
+	log_blank();
 	clear_undo();
 	game.where = null;
 	game.active = TR;
@@ -749,7 +753,7 @@ function end_american_play() {
 }
 
 function end_tripolitan_play() {
-	log("");
+	log_blank();
 	clear_undo();
 	game.where = null;
 	end_of_season();
@@ -1172,7 +1176,8 @@ function naval_bombardment_round() {
 	if (n_frigates + n_gunboats > 0) {
 		let n_infantry = count_tripolitan_infantry(game.where);
 		let n_hits = 0;
-		log("Naval Bombardment in " + SPACES[game.where] + ".");
+		log_blank();
+		log("Naval bombardment in " + SPACES[game.where] + ".");
 		n_hits += roll_many_dice("American frigates:\n", n_frigates * 2, 6);
 		n_hits += roll_many_dice("American gunboats:\n", n_gunboats, 6);
 		if (n_hits > n_infantry)
@@ -1209,6 +1214,7 @@ function goto_naval_battle(space) {
 	game.save_active = game.active;
 	game.where = space;
 	game.round = 0;
+	log_blank();
 	log("Naval battle in " + SPACES[game.where] + ".");
 	goto_naval_battle_american_card();
 }
@@ -1276,6 +1282,11 @@ states.naval_battle_tripolitan_card = {
 function goto_naval_battle_round() {
 	game.active = game.save_active;
 	game.round ++;
+
+	if (game.active_card === ASSAULT_ON_TRIPOLI) {
+		log_blank();
+		log("Naval battle round " + game.round + ".");
+	}
 
 	let n_us_frigates = count_american_frigates(game.where);
 	let n_us_gunboats = count_american_gunboats(game.where);
@@ -1479,8 +1490,6 @@ function resume_naval_battle() {
 			log("The American fleet has been eliminated.");
 			return goto_game_over(TR, "Assault on Tripoli failed.");
 		}
-		log("");
-		log("Naval battle continues...");
 		return goto_naval_battle_round();
 	}
 
@@ -1557,7 +1566,8 @@ states.land_battle_bombardment_results = {
 	next() {
 		delete game.flash;
 
-		log("Land Battle in " + SPACES[game.where] + ".");
+		log_blank();
+		log("Land battle in " + SPACES[game.where] + ".");
 
 		goto_land_battle();
 	},
@@ -1692,7 +1702,8 @@ function goto_land_battle_round() {
 		return end_american_play();
 	}
 
-	log("Land battle round.");
+	log_blank();
+	log("Land battle round " + game.round + ".");
 
 	let n_tr_hits = 0;
 	if (game.lieutenant_obannon_leads_the_charge && n_us_mar > 0) {
@@ -1855,8 +1866,8 @@ states.yusuf_qaramanli = {
 				gen_action(view, 'space', space);
 	},
 	space(space) {
-		log("");
-		log("Pirate Raid from " + SPACES[space] + ".");
+		log_blank();
+		log("Pirate raid from " + SPACES[space] + ".");
 		remove_from_array(game.raids, space);
 		switch (space) {
 		case ALGIERS: return goto_pirate_raid(ALGIERS);
@@ -2769,7 +2780,7 @@ function goto_game_over(result, message) {
 		game.victory = "United States victory:\n" + message;
 	else
 		game.victory = message;
-	log("");
+	log_blank();
 	log(game.victory);
 	return true;
 }

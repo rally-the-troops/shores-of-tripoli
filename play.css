@@ -8,8 +8,10 @@ body.United_States header.your_turn { background-color: skyblue; }
 #role_Tripolitania .role_name { background-color: salmon; }
 
 #log { background-color: #eee; }
-#log .st { background-color: #777; color: white; font-weight: bold; padding:3px; text-align: center; }
-#log .ss { background-color: #ccc; color: #444; font-weight: bold; padding:3px; text-align: center; }
+#log .year { background-color: #777; color: white; font-weight: bold; padding:3px; text-align: center; }
+#log .season { background-color: #ccc; color: #444; font-weight: bold; padding:3px; text-align: center; }
+#log .raid, .battle { text-decoration: underline; font-style: italic; font-weight: bold; }
+#log .round { text-decoration: underline; font-style: italic; }
 #log .end { font-style: italic; }
 #log .us_tip { color: blue; text-decoration: dotted underline; cursor: help; }
 #log .tr_tip { color: #d00; text-decoration: dotted underline; cursor: help; }

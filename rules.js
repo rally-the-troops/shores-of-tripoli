@@ -2923,7 +2923,7 @@ exports.is_checkpoint = (a, b) => a.season !== b.season;
 exports.view = function(state, current) {
 	game = state;
 
-	let tr_score = count_american_frigates(TRIPOLITAN_SUPPLY) * 3 + game.tr.gold;
+	let tr_score = Math.min(count_american_frigates(TRIPOLITAN_SUPPLY), 4) * 3 + game.tr.gold;
 
 	let view = {
 		log: game.log,

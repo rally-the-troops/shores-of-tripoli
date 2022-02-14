@@ -13,6 +13,8 @@ exports.scenarios = [
 	"Fortress Tripoli"
 ];
 
+exports.roles = [ US, TR ];
+
 function get_piece_id(name) {
 	return PIECES.indexOf(name);
 }

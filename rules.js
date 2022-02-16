@@ -2771,11 +2771,16 @@ function check_frigate_victory() {
 	return false;
 }
 
+function calculate_tr_score() {
+	return Math.min(count_american_frigates(TRIPOLITAN_SUPPLY), 4) * 3 + game.tr.gold;
+}
+
 function goto_game_over(result, message) {
 	game.where = null;
 	game.state = 'game_over';
 	game.active = "None";
 	game.result = result;
+	game.score = calculate_tr_score();
 	if (result === TR)
 		game.victory = "Tripolitan victory:\n" + message;
 	else if (result === US)
@@ -2925,7 +2930,8 @@ exports.is_checkpoint = (a, b) => a.season !== b.season;
 exports.view = function(state, current) {
 	game = state;
 
-	let tr_score = Math.min(count_american_frigates(TRIPOLITAN_SUPPLY), 4) * 3 + game.tr.gold;
+	let tr_score = calculate_tr_score();
+	let us_score = 24 - tr_score;
 
 	let view = {
 		log: game.log,
@@ -2949,7 +2955,7 @@ exports.view = function(state, current) {
 			draw: game.us.draw.length,
 			discard: game.us.discard.length + (game.us.queue ? game.us.queue.length : 0),
 			hand: game.us.hand.length,
-			score: 25 - tr_score,
+			score: us_score,
 		},
 		card: game.active_card,
 		where: game.where,

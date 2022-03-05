@@ -125,7 +125,7 @@ function sub_log_entry_tip(match, p1, offset, string) {
 }
 
 let last_log_who = 'st';
-create_log_entry = function (text) {
+function on_log(text) {
 	let p = document.createElement("div");
 	text = text.replace(/&/g, "&amp;");
 	text = text.replace(/</g, "&lt;");

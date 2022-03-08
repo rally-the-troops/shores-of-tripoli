@@ -1918,7 +1918,31 @@ states.murad_reis_breaks_out = {
 function end_murad_reis_breaks_out(us_dice) {
 	interception_roll(GIBRALTAR, us_dice);
 	move_all_pieces(TR_CORSAIRS, GIBRALTAR, TRIPOLI);
-	end_tripolitan_play();
+	if (can_play_us_signal_books_overboard())
+		game.state = 'murad_reis_overboard';
+	else
+		end_tripolitan_play();
+}
+
+states.murad_reis_overboard = {
+	prompt(view, current) {
+		view.prompt = "Tripolitania: Murad Reis Breaks Out";
+		view.prompt += you_may_play(current, US_SIGNAL_BOOKS_OVERBOARD);
+		if (is_inactive_player(current))
+			return;
+		if (game.tr.hand.includes(US_SIGNAL_BOOKS_OVERBOARD))
+			gen_action(view, 'card_event', US_SIGNAL_BOOKS_OVERBOARD);
+		gen_action(view, 'next');
+	},
+	card_event(card) {
+		play_battle_card(game.tr, card);
+		let c = discard_random_card(game.us.hand, game.us.discard);
+		log("United States discards \u{201c}" + CARD_NAMES[c] + "\u{201d}.");
+		end_tripolitan_play();
+	},
+	next() {
+		end_tripolitan_play();
+	},
 }
 
 function can_play_constantinople_sends_aid() {

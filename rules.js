@@ -9,8 +9,8 @@ const TR = "Tripolitania";
 const { SPACES, PIECES } = require('./data');
 
 exports.scenarios = [
+	"Fortress Tripoli",
 	"Standard",
-	"Fortress Tripoli"
 ];
 
 exports.roles = [ US, TR ];

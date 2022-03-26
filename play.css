@@ -199,63 +199,246 @@ body.United_States #popup div.us_always { display: block; }
 	line-height: 40px;
 }
 
-.tr_card_1{background-image:url('cards/tr_card_1.jpg')}
-.tr_card_2{background-image:url('cards/tr_card_2.jpg')}
-.tr_card_3{background-image:url('cards/tr_card_3.jpg')}
-.tr_card_4{background-image:url('cards/tr_card_4.jpg')}
-.tr_card_5{background-image:url('cards/tr_card_5.jpg')}
-.tr_card_6{background-image:url('cards/tr_card_5.jpg')}
-.tr_card_7{background-image:url('cards/tr_card_7.jpg')}
-.tr_card_8{background-image:url('cards/tr_card_7.jpg')}
-.tr_card_9{background-image:url('cards/tr_card_9.jpg')}
-.tr_card_10{background-image:url('cards/tr_card_9.jpg')}
-.tr_card_11{background-image:url('cards/tr_card_11.jpg')}
-.tr_card_12{background-image:url('cards/tr_card_12.jpg')}
-.tr_card_13{background-image:url('cards/tr_card_13.jpg')}
-.tr_card_14{background-image:url('cards/tr_card_14.jpg')}
-.tr_card_15{background-image:url('cards/tr_card_15.jpg')}
-.tr_card_16{background-image:url('cards/tr_card_16.jpg')}
-.tr_card_17{background-image:url('cards/tr_card_17.jpg')}
-.tr_card_18{background-image:url('cards/tr_card_18.jpg')}
-.tr_card_19{background-image:url('cards/tr_card_19.jpg')}
-.tr_card_20{background-image:url('cards/tr_card_20.jpg')}
-.tr_card_21{background-image:url('cards/tr_card_21.jpg')}
-.tr_card_22{background-image:url('cards/tr_card_22.jpg')}
-.tr_card_23{background-image:url('cards/tr_card_23.jpg')}
-.tr_card_24{background-image:url('cards/tr_card_24.jpg')}
-.tr_card_25{background-image:url('cards/tr_card_25.jpg')}
-.tr_card_26{background-image:url('cards/tr_card_26.jpg')}
-.tr_card_27{background-image:url('cards/tr_card_27.jpg')}
-.tr_card_28{background-image:url('cards/tr_card_28.jpg')}
-.tr_card_29{background-image:url('cards/tr_card_29.jpg')}
-.tr_card_30{background-image:url('cards/tr_card_30.jpg')}
-.tr_card_back{background-image:url('cards/tr_card_31.jpg')}
+html.jpeg .tr_card_1{background-image:url(cards.1x/tr_card_1.jpg)}
+html.jpeg .tr_card_2{background-image:url(cards.1x/tr_card_2.jpg)}
+html.jpeg .tr_card_3{background-image:url(cards.1x/tr_card_3.jpg)}
+html.jpeg .tr_card_4{background-image:url(cards.1x/tr_card_4.jpg)}
+html.jpeg .tr_card_5{background-image:url(cards.1x/tr_card_5.jpg)}
+html.jpeg .tr_card_6{background-image:url(cards.1x/tr_card_5.jpg)}
+html.jpeg .tr_card_7{background-image:url(cards.1x/tr_card_7.jpg)}
+html.jpeg .tr_card_8{background-image:url(cards.1x/tr_card_7.jpg)}
+html.jpeg .tr_card_9{background-image:url(cards.1x/tr_card_9.jpg)}
+html.jpeg .tr_card_10{background-image:url(cards.1x/tr_card_9.jpg)}
+html.jpeg .tr_card_11{background-image:url(cards.1x/tr_card_11.jpg)}
+html.jpeg .tr_card_12{background-image:url(cards.1x/tr_card_12.jpg)}
+html.jpeg .tr_card_13{background-image:url(cards.1x/tr_card_13.jpg)}
+html.jpeg .tr_card_14{background-image:url(cards.1x/tr_card_14.jpg)}
+html.jpeg .tr_card_15{background-image:url(cards.1x/tr_card_15.jpg)}
+html.jpeg .tr_card_16{background-image:url(cards.1x/tr_card_16.jpg)}
+html.jpeg .tr_card_17{background-image:url(cards.1x/tr_card_17.jpg)}
+html.jpeg .tr_card_18{background-image:url(cards.1x/tr_card_18.jpg)}
+html.jpeg .tr_card_19{background-image:url(cards.1x/tr_card_19.jpg)}
+html.jpeg .tr_card_20{background-image:url(cards.1x/tr_card_20.jpg)}
+html.jpeg .tr_card_21{background-image:url(cards.1x/tr_card_21.jpg)}
+html.jpeg .tr_card_22{background-image:url(cards.1x/tr_card_22.jpg)}
+html.jpeg .tr_card_23{background-image:url(cards.1x/tr_card_23.jpg)}
+html.jpeg .tr_card_24{background-image:url(cards.1x/tr_card_24.jpg)}
+html.jpeg .tr_card_25{background-image:url(cards.1x/tr_card_25.jpg)}
+html.jpeg .tr_card_26{background-image:url(cards.1x/tr_card_26.jpg)}
+html.jpeg .tr_card_27{background-image:url(cards.1x/tr_card_27.jpg)}
+html.jpeg .tr_card_28{background-image:url(cards.1x/tr_card_28.jpg)}
+html.jpeg .tr_card_29{background-image:url(cards.1x/tr_card_29.jpg)}
+html.jpeg .tr_card_30{background-image:url(cards.1x/tr_card_30.jpg)}
+html.jpeg .tr_card_back{background-image:url(cards.1x/tr_card_31.jpg)}
+html.jpeg .us_card_1{background-image:url(cards.1x/us_card_1.jpg)}
+html.jpeg .us_card_2{background-image:url(cards.1x/us_card_2.jpg)}
+html.jpeg .us_card_3{background-image:url(cards.1x/us_card_3.jpg)}
+html.jpeg .us_card_4{background-image:url(cards.1x/us_card_4.jpg)}
+html.jpeg .us_card_5{background-image:url(cards.1x/us_card_5.jpg)}
+html.jpeg .us_card_6{background-image:url(cards.1x/us_card_6.jpg)}
+html.jpeg .us_card_7{background-image:url(cards.1x/us_card_6.jpg)}
+html.jpeg .us_card_8{background-image:url(cards.1x/us_card_6.jpg)}
+html.jpeg .us_card_9{background-image:url(cards.1x/us_card_6.jpg)}
+html.jpeg .us_card_10{background-image:url(cards.1x/us_card_10.jpg)}
+html.jpeg .us_card_11{background-image:url(cards.1x/us_card_11.jpg)}
+html.jpeg .us_card_12{background-image:url(cards.1x/us_card_12.jpg)}
+html.jpeg .us_card_13{background-image:url(cards.1x/us_card_13.jpg)}
+html.jpeg .us_card_14{background-image:url(cards.1x/us_card_14.jpg)}
+html.jpeg .us_card_15{background-image:url(cards.1x/us_card_15.jpg)}
+html.jpeg .us_card_16{background-image:url(cards.1x/us_card_16.jpg)}
+html.jpeg .us_card_17{background-image:url(cards.1x/us_card_17.jpg)}
+html.jpeg .us_card_18{background-image:url(cards.1x/us_card_18.jpg)}
+html.jpeg .us_card_19{background-image:url(cards.1x/us_card_19.jpg)}
+html.jpeg .us_card_20{background-image:url(cards.1x/us_card_20.jpg)}
+html.jpeg .us_card_21{background-image:url(cards.1x/us_card_21.jpg)}
+html.jpeg .us_card_22{background-image:url(cards.1x/us_card_22.jpg)}
+html.jpeg .us_card_23{background-image:url(cards.1x/us_card_23.jpg)}
+html.jpeg .us_card_24{background-image:url(cards.1x/us_card_24.jpg)}
+html.jpeg .us_card_25{background-image:url(cards.1x/us_card_25.jpg)}
+html.jpeg .us_card_26{background-image:url(cards.1x/us_card_26.jpg)}
+html.jpeg .us_card_27{background-image:url(cards.1x/us_card_27.jpg)}
+html.jpeg .us_card_back{background-image:url(cards.1x/us_card_28.jpg)}
 
-.us_card_1{background-image:url('cards/us_card_1.jpg')}
-.us_card_2{background-image:url('cards/us_card_2.jpg')}
-.us_card_3{background-image:url('cards/us_card_3.jpg')}
-.us_card_4{background-image:url('cards/us_card_4.jpg')}
-.us_card_5{background-image:url('cards/us_card_5.jpg')}
-.us_card_6{background-image:url('cards/us_card_6.jpg')}
-.us_card_7{background-image:url('cards/us_card_6.jpg')}
-.us_card_8{background-image:url('cards/us_card_6.jpg')}
-.us_card_9{background-image:url('cards/us_card_6.jpg')}
-.us_card_10{background-image:url('cards/us_card_10.jpg')}
-.us_card_11{background-image:url('cards/us_card_11.jpg')}
-.us_card_12{background-image:url('cards/us_card_12.jpg')}
-.us_card_13{background-image:url('cards/us_card_13.jpg')}
-.us_card_14{background-image:url('cards/us_card_14.jpg')}
-.us_card_15{background-image:url('cards/us_card_15.jpg')}
-.us_card_16{background-image:url('cards/us_card_16.jpg')}
-.us_card_17{background-image:url('cards/us_card_17.jpg')}
-.us_card_18{background-image:url('cards/us_card_18.jpg')}
-.us_card_19{background-image:url('cards/us_card_19.jpg')}
-.us_card_20{background-image:url('cards/us_card_20.jpg')}
-.us_card_21{background-image:url('cards/us_card_21.jpg')}
-.us_card_22{background-image:url('cards/us_card_22.jpg')}
-.us_card_23{background-image:url('cards/us_card_23.jpg')}
-.us_card_24{background-image:url('cards/us_card_24.jpg')}
-.us_card_25{background-image:url('cards/us_card_25.jpg')}
-.us_card_26{background-image:url('cards/us_card_26.jpg')}
-.us_card_27{background-image:url('cards/us_card_27.jpg')}
-.us_card_back{background-image:url('cards/us_card_28.jpg')}
+html.avif .tr_card_1{background-image:url(cards.1x/tr_card_1.avif)}
+html.avif .tr_card_2{background-image:url(cards.1x/tr_card_2.avif)}
+html.avif .tr_card_3{background-image:url(cards.1x/tr_card_3.avif)}
+html.avif .tr_card_4{background-image:url(cards.1x/tr_card_4.avif)}
+html.avif .tr_card_5{background-image:url(cards.1x/tr_card_5.avif)}
+html.avif .tr_card_6{background-image:url(cards.1x/tr_card_5.avif)}
+html.avif .tr_card_7{background-image:url(cards.1x/tr_card_7.avif)}
+html.avif .tr_card_8{background-image:url(cards.1x/tr_card_7.avif)}
+html.avif .tr_card_9{background-image:url(cards.1x/tr_card_9.avif)}
+html.avif .tr_card_10{background-image:url(cards.1x/tr_card_9.avif)}
+html.avif .tr_card_11{background-image:url(cards.1x/tr_card_11.avif)}
+html.avif .tr_card_12{background-image:url(cards.1x/tr_card_12.avif)}
+html.avif .tr_card_13{background-image:url(cards.1x/tr_card_13.avif)}
+html.avif .tr_card_14{background-image:url(cards.1x/tr_card_14.avif)}
+html.avif .tr_card_15{background-image:url(cards.1x/tr_card_15.avif)}
+html.avif .tr_card_16{background-image:url(cards.1x/tr_card_16.avif)}
+html.avif .tr_card_17{background-image:url(cards.1x/tr_card_17.avif)}
+html.avif .tr_card_18{background-image:url(cards.1x/tr_card_18.avif)}
+html.avif .tr_card_19{background-image:url(cards.1x/tr_card_19.avif)}
+html.avif .tr_card_20{background-image:url(cards.1x/tr_card_20.avif)}
+html.avif .tr_card_21{background-image:url(cards.1x/tr_card_21.avif)}
+html.avif .tr_card_22{background-image:url(cards.1x/tr_card_22.avif)}
+html.avif .tr_card_23{background-image:url(cards.1x/tr_card_23.avif)}
+html.avif .tr_card_24{background-image:url(cards.1x/tr_card_24.avif)}
+html.avif .tr_card_25{background-image:url(cards.1x/tr_card_25.avif)}
+html.avif .tr_card_26{background-image:url(cards.1x/tr_card_26.avif)}
+html.avif .tr_card_27{background-image:url(cards.1x/tr_card_27.avif)}
+html.avif .tr_card_28{background-image:url(cards.1x/tr_card_28.avif)}
+html.avif .tr_card_29{background-image:url(cards.1x/tr_card_29.avif)}
+html.avif .tr_card_30{background-image:url(cards.1x/tr_card_30.avif)}
+html.avif .tr_card_back{background-image:url(cards.1x/tr_card_31.avif)}
+html.avif .us_card_1{background-image:url(cards.1x/us_card_1.avif)}
+html.avif .us_card_2{background-image:url(cards.1x/us_card_2.avif)}
+html.avif .us_card_3{background-image:url(cards.1x/us_card_3.avif)}
+html.avif .us_card_4{background-image:url(cards.1x/us_card_4.avif)}
+html.avif .us_card_5{background-image:url(cards.1x/us_card_5.avif)}
+html.avif .us_card_6{background-image:url(cards.1x/us_card_6.avif)}
+html.avif .us_card_7{background-image:url(cards.1x/us_card_6.avif)}
+html.avif .us_card_8{background-image:url(cards.1x/us_card_6.avif)}
+html.avif .us_card_9{background-image:url(cards.1x/us_card_6.avif)}
+html.avif .us_card_10{background-image:url(cards.1x/us_card_10.avif)}
+html.avif .us_card_11{background-image:url(cards.1x/us_card_11.avif)}
+html.avif .us_card_12{background-image:url(cards.1x/us_card_12.avif)}
+html.avif .us_card_13{background-image:url(cards.1x/us_card_13.avif)}
+html.avif .us_card_14{background-image:url(cards.1x/us_card_14.avif)}
+html.avif .us_card_15{background-image:url(cards.1x/us_card_15.avif)}
+html.avif .us_card_16{background-image:url(cards.1x/us_card_16.avif)}
+html.avif .us_card_17{background-image:url(cards.1x/us_card_17.avif)}
+html.avif .us_card_18{background-image:url(cards.1x/us_card_18.avif)}
+html.avif .us_card_19{background-image:url(cards.1x/us_card_19.avif)}
+html.avif .us_card_20{background-image:url(cards.1x/us_card_20.avif)}
+html.avif .us_card_21{background-image:url(cards.1x/us_card_21.avif)}
+html.avif .us_card_22{background-image:url(cards.1x/us_card_22.avif)}
+html.avif .us_card_23{background-image:url(cards.1x/us_card_23.avif)}
+html.avif .us_card_24{background-image:url(cards.1x/us_card_24.avif)}
+html.avif .us_card_25{background-image:url(cards.1x/us_card_25.avif)}
+html.avif .us_card_26{background-image:url(cards.1x/us_card_26.avif)}
+html.avif .us_card_27{background-image:url(cards.1x/us_card_27.avif)}
+html.avif .us_card_back{background-image:url(cards.1x/us_card_28.avif)}
+
+@media (min-resolution: 97dpi) {
+
+html.jpeg .tr_card_1{background-image:url(cards.2x/tr_card_1.jpg)}
+html.jpeg .tr_card_2{background-image:url(cards.2x/tr_card_2.jpg)}
+html.jpeg .tr_card_3{background-image:url(cards.2x/tr_card_3.jpg)}
+html.jpeg .tr_card_4{background-image:url(cards.2x/tr_card_4.jpg)}
+html.jpeg .tr_card_5{background-image:url(cards.2x/tr_card_5.jpg)}
+html.jpeg .tr_card_6{background-image:url(cards.2x/tr_card_5.jpg)}
+html.jpeg .tr_card_7{background-image:url(cards.2x/tr_card_7.jpg)}
+html.jpeg .tr_card_8{background-image:url(cards.2x/tr_card_7.jpg)}
+html.jpeg .tr_card_9{background-image:url(cards.2x/tr_card_9.jpg)}
+html.jpeg .tr_card_10{background-image:url(cards.2x/tr_card_9.jpg)}
+html.jpeg .tr_card_11{background-image:url(cards.2x/tr_card_11.jpg)}
+html.jpeg .tr_card_12{background-image:url(cards.2x/tr_card_12.jpg)}
+html.jpeg .tr_card_13{background-image:url(cards.2x/tr_card_13.jpg)}
+html.jpeg .tr_card_14{background-image:url(cards.2x/tr_card_14.jpg)}
+html.jpeg .tr_card_15{background-image:url(cards.2x/tr_card_15.jpg)}
+html.jpeg .tr_card_16{background-image:url(cards.2x/tr_card_16.jpg)}
+html.jpeg .tr_card_17{background-image:url(cards.2x/tr_card_17.jpg)}
+html.jpeg .tr_card_18{background-image:url(cards.2x/tr_card_18.jpg)}
+html.jpeg .tr_card_19{background-image:url(cards.2x/tr_card_19.jpg)}
+html.jpeg .tr_card_20{background-image:url(cards.2x/tr_card_20.jpg)}
+html.jpeg .tr_card_21{background-image:url(cards.2x/tr_card_21.jpg)}
+html.jpeg .tr_card_22{background-image:url(cards.2x/tr_card_22.jpg)}
+html.jpeg .tr_card_23{background-image:url(cards.2x/tr_card_23.jpg)}
+html.jpeg .tr_card_24{background-image:url(cards.2x/tr_card_24.jpg)}
+html.jpeg .tr_card_25{background-image:url(cards.2x/tr_card_25.jpg)}
+html.jpeg .tr_card_26{background-image:url(cards.2x/tr_card_26.jpg)}
+html.jpeg .tr_card_27{background-image:url(cards.2x/tr_card_27.jpg)}
+html.jpeg .tr_card_28{background-image:url(cards.2x/tr_card_28.jpg)}
+html.jpeg .tr_card_29{background-image:url(cards.2x/tr_card_29.jpg)}
+html.jpeg .tr_card_30{background-image:url(cards.2x/tr_card_30.jpg)}
+html.jpeg .tr_card_back{background-image:url(cards.2x/tr_card_31.jpg)}
+html.jpeg .us_card_1{background-image:url(cards.2x/us_card_1.jpg)}
+html.jpeg .us_card_2{background-image:url(cards.2x/us_card_2.jpg)}
+html.jpeg .us_card_3{background-image:url(cards.2x/us_card_3.jpg)}
+html.jpeg .us_card_4{background-image:url(cards.2x/us_card_4.jpg)}
+html.jpeg .us_card_5{background-image:url(cards.2x/us_card_5.jpg)}
+html.jpeg .us_card_6{background-image:url(cards.2x/us_card_6.jpg)}
+html.jpeg .us_card_7{background-image:url(cards.2x/us_card_6.jpg)}
+html.jpeg .us_card_8{background-image:url(cards.2x/us_card_6.jpg)}
+html.jpeg .us_card_9{background-image:url(cards.2x/us_card_6.jpg)}
+html.jpeg .us_card_10{background-image:url(cards.2x/us_card_10.jpg)}
+html.jpeg .us_card_11{background-image:url(cards.2x/us_card_11.jpg)}
+html.jpeg .us_card_12{background-image:url(cards.2x/us_card_12.jpg)}
+html.jpeg .us_card_13{background-image:url(cards.2x/us_card_13.jpg)}
+html.jpeg .us_card_14{background-image:url(cards.2x/us_card_14.jpg)}
+html.jpeg .us_card_15{background-image:url(cards.2x/us_card_15.jpg)}
+html.jpeg .us_card_16{background-image:url(cards.2x/us_card_16.jpg)}
+html.jpeg .us_card_17{background-image:url(cards.2x/us_card_17.jpg)}
+html.jpeg .us_card_18{background-image:url(cards.2x/us_card_18.jpg)}
+html.jpeg .us_card_19{background-image:url(cards.2x/us_card_19.jpg)}
+html.jpeg .us_card_20{background-image:url(cards.2x/us_card_20.jpg)}
+html.jpeg .us_card_21{background-image:url(cards.2x/us_card_21.jpg)}
+html.jpeg .us_card_22{background-image:url(cards.2x/us_card_22.jpg)}
+html.jpeg .us_card_23{background-image:url(cards.2x/us_card_23.jpg)}
+html.jpeg .us_card_24{background-image:url(cards.2x/us_card_24.jpg)}
+html.jpeg .us_card_25{background-image:url(cards.2x/us_card_25.jpg)}
+html.jpeg .us_card_26{background-image:url(cards.2x/us_card_26.jpg)}
+html.jpeg .us_card_27{background-image:url(cards.2x/us_card_27.jpg)}
+html.jpeg .us_card_back{background-image:url(cards.2x/us_card_28.jpg)}
+
+html.avif .tr_card_1{background-image:url(cards.2x/tr_card_1.avif)}
+html.avif .tr_card_2{background-image:url(cards.2x/tr_card_2.avif)}
+html.avif .tr_card_3{background-image:url(cards.2x/tr_card_3.avif)}
+html.avif .tr_card_4{background-image:url(cards.2x/tr_card_4.avif)}
+html.avif .tr_card_5{background-image:url(cards.2x/tr_card_5.avif)}
+html.avif .tr_card_6{background-image:url(cards.2x/tr_card_5.avif)}
+html.avif .tr_card_7{background-image:url(cards.2x/tr_card_7.avif)}
+html.avif .tr_card_8{background-image:url(cards.2x/tr_card_7.avif)}
+html.avif .tr_card_9{background-image:url(cards.2x/tr_card_9.avif)}
+html.avif .tr_card_10{background-image:url(cards.2x/tr_card_9.avif)}
+html.avif .tr_card_11{background-image:url(cards.2x/tr_card_11.avif)}
+html.avif .tr_card_12{background-image:url(cards.2x/tr_card_12.avif)}
+html.avif .tr_card_13{background-image:url(cards.2x/tr_card_13.avif)}
+html.avif .tr_card_14{background-image:url(cards.2x/tr_card_14.avif)}
+html.avif .tr_card_15{background-image:url(cards.2x/tr_card_15.avif)}
+html.avif .tr_card_16{background-image:url(cards.2x/tr_card_16.avif)}
+html.avif .tr_card_17{background-image:url(cards.2x/tr_card_17.avif)}
+html.avif .tr_card_18{background-image:url(cards.2x/tr_card_18.avif)}
+html.avif .tr_card_19{background-image:url(cards.2x/tr_card_19.avif)}
+html.avif .tr_card_20{background-image:url(cards.2x/tr_card_20.avif)}
+html.avif .tr_card_21{background-image:url(cards.2x/tr_card_21.avif)}
+html.avif .tr_card_22{background-image:url(cards.2x/tr_card_22.avif)}
+html.avif .tr_card_23{background-image:url(cards.2x/tr_card_23.avif)}
+html.avif .tr_card_24{background-image:url(cards.2x/tr_card_24.avif)}
+html.avif .tr_card_25{background-image:url(cards.2x/tr_card_25.avif)}
+html.avif .tr_card_26{background-image:url(cards.2x/tr_card_26.avif)}
+html.avif .tr_card_27{background-image:url(cards.2x/tr_card_27.avif)}
+html.avif .tr_card_28{background-image:url(cards.2x/tr_card_28.avif)}
+html.avif .tr_card_29{background-image:url(cards.2x/tr_card_29.avif)}
+html.avif .tr_card_30{background-image:url(cards.2x/tr_card_30.avif)}
+html.avif .tr_card_back{background-image:url(cards.2x/tr_card_31.avif)}
+html.avif .us_card_1{background-image:url(cards.2x/us_card_1.avif)}
+html.avif .us_card_2{background-image:url(cards.2x/us_card_2.avif)}
+html.avif .us_card_3{background-image:url(cards.2x/us_card_3.avif)}
+html.avif .us_card_4{background-image:url(cards.2x/us_card_4.avif)}
+html.avif .us_card_5{background-image:url(cards.2x/us_card_5.avif)}
+html.avif .us_card_6{background-image:url(cards.2x/us_card_6.avif)}
+html.avif .us_card_7{background-image:url(cards.2x/us_card_6.avif)}
+html.avif .us_card_8{background-image:url(cards.2x/us_card_6.avif)}
+html.avif .us_card_9{background-image:url(cards.2x/us_card_6.avif)}
+html.avif .us_card_10{background-image:url(cards.2x/us_card_10.avif)}
+html.avif .us_card_11{background-image:url(cards.2x/us_card_11.avif)}
+html.avif .us_card_12{background-image:url(cards.2x/us_card_12.avif)}
+html.avif .us_card_13{background-image:url(cards.2x/us_card_13.avif)}
+html.avif .us_card_14{background-image:url(cards.2x/us_card_14.avif)}
+html.avif .us_card_15{background-image:url(cards.2x/us_card_15.avif)}
+html.avif .us_card_16{background-image:url(cards.2x/us_card_16.avif)}
+html.avif .us_card_17{background-image:url(cards.2x/us_card_17.avif)}
+html.avif .us_card_18{background-image:url(cards.2x/us_card_18.avif)}
+html.avif .us_card_19{background-image:url(cards.2x/us_card_19.avif)}
+html.avif .us_card_20{background-image:url(cards.2x/us_card_20.avif)}
+html.avif .us_card_21{background-image:url(cards.2x/us_card_21.avif)}
+html.avif .us_card_22{background-image:url(cards.2x/us_card_22.avif)}
+html.avif .us_card_23{background-image:url(cards.2x/us_card_23.avif)}
+html.avif .us_card_24{background-image:url(cards.2x/us_card_24.avif)}
+html.avif .us_card_25{background-image:url(cards.2x/us_card_25.avif)}
+html.avif .us_card_26{background-image:url(cards.2x/us_card_26.avif)}
+html.avif .us_card_27{background-image:url(cards.2x/us_card_27.avif)}
+html.avif .us_card_back{background-image:url(cards.2x/us_card_28.avif)}
+
+}

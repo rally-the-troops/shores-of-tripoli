@@ -2939,6 +2939,8 @@ exports.action = function (state, current, action, arg) {
 }
 
 exports.resign = function (state, current) {
+	return state;
+	// DISABLE resigning
 	game = state;
 	if (game.state !== 'game_over') {
 		if (current === US)

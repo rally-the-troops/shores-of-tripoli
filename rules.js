@@ -1282,6 +1282,8 @@ states.naval_battle_tripolitan_card = {
 }
 
 function goto_naval_battle_round() {
+	clear_undo();
+
 	game.active = game.save_active;
 	game.round ++;
 

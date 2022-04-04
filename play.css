@@ -13,8 +13,9 @@ body.United_States header.your_turn { background-color: skyblue; }
 #log .raid, .battle { text-decoration: underline; font-style: italic; font-weight: bold; }
 #log .round { text-decoration: underline; font-style: italic; }
 #log .end { font-style: italic; }
-#log .us_tip { color: blue; text-decoration: dotted underline; cursor: help; }
-#log .tr_tip { color: #d00; text-decoration: dotted underline; cursor: help; }
+#log .us_tip { color: blue; }
+#log .tr_tip { color: #d00; }
+#log .us_tip:hover, #log .tr_tip:hover { text-decoration: underline; }
 
 .hand {
 	min-height: 300px;

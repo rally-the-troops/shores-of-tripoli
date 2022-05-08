@@ -428,7 +428,7 @@ function discard_card(player, card, reason = "") {
 }
 
 function play_card(player, card) {
-	log(game.active + " played \u{201c}" + CARD_NAMES[card] + "\u{201d}.");
+	log(game.active + " played #" + card + ".");
 	remove_from_array(player.core, card);
 	remove_from_array(player.hand, card);
 	remove_from_array(player.discard, card);
@@ -438,7 +438,7 @@ function play_card(player, card) {
 }
 
 function play_battle_card(player, card) {
-	log(game.active + " played \u{201c}" + CARD_NAMES[card] + "\u{201d}.");
+	log(game.active + " played #" + card + ".");
 	remove_from_array(player.hand, card);
 }
 
@@ -600,7 +600,7 @@ function can_pirate_raid_from_tripoli() {
 }
 
 function start_of_year() {
-	log("Start of " + game.year + ".");
+	log(".year " + game.year);
 	log_blank();
 
 	game.season = SPRING;
@@ -739,7 +739,7 @@ states.hand_size = {
 
 function goto_american_play() {
 	log_blank();
-	log("Start of " + SEASON_NAMES[game.season] + ".");
+	log(".season " + SEASON_NAMES[game.season]);
 	log_blank();
 
 	game.active = US;
@@ -925,7 +925,7 @@ states.raid_before_hunt = {
 		play_battle_card(game.tr, card);
 		if (card === US_SIGNAL_BOOKS_OVERBOARD) {
 			let c = discard_random_card(game.us.hand, game.us.discard);
-			log("United States discarded \u{201c}" + CARD_NAMES[c] + "\u{201d}.");
+			log("United States discarded #" + c + "\.");
 		}
 		if (card === HAPPY_HUNTING) {
 			game.happy_hunting = true;
@@ -1939,7 +1939,7 @@ states.murad_reis_overboard = {
 	card_event(card) {
 		play_battle_card(game.tr, card);
 		let c = discard_random_card(game.us.hand, game.us.discard);
-		log("United States discarded \u{201c}" + CARD_NAMES[c] + "\u{201d}.");
+		log("United States discarded #" + c + ".");
 		end_tripolitan_play();
 	},
 	next() {

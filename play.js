@@ -124,6 +124,15 @@ function sub_log_entry_tip(match, p1, offset, string) {
 	return match;
 }
 
+function sub_log_entry_tip2(match, p1, offset, string) {
+	let card_number = p1 | 0;
+	if (card_number < 28)
+		return `\n<span class="us_tip" onmouseenter="on_focus_card_tip('us_card_${card_number}')" onmouseleave="on_blur_card_tip()">${US_CARD_NAMES[card_number-1]}</span>`;
+	else
+		return `\n<span class="tr_tip" onmouseenter="on_focus_card_tip('tr_card_${card_number-27}')" onmouseleave="on_blur_card_tip()">${TR_CARD_NAMES[card_number-28]}</span>`;
+	return match;
+}
+
 let last_log_who = 'st';
 function on_log(text) {
 	let p = document.createElement("div");
@@ -131,11 +140,18 @@ function on_log(text) {
 	text = text.replace(/</g, "&lt;");
 	text = text.replace(/>/g, "&gt;");
 	text = text.replace(/\u201c(.*)\u201d/g, sub_log_entry_tip);
+	text = text.replace(/#(\d+)/g, sub_log_entry_tip2);
 	if (text.match(/^Start of \d+/)) {
 		text = text.substring(9, text.length-1);
 		p.className = 'year';
 	} else if (text.match(/^Start of /)) {
 		text = text.substring(9, text.length-1);
+		p.className = 'season';
+	} else if (text.match(/^.year \d+/)) {
+		text = text.substring(6);
+		p.className = 'year';
+	} else if (text.match(/^.season /)) {
+		text = text.substring(8);
 		p.className = 'season';
 	} else if (text.match(/^Pirate raid from/)) {
 		p.className = 'raid';

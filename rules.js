@@ -772,7 +772,7 @@ function end_of_season() {
 
 function end_of_year() {
 	if (game.year === 1806)
-		return goto_game_over("Draw", "The game ends in a draw.");
+		return goto_game_over("Draw", "The game ended in a draw.");
 	++game.year;
 	start_of_year();
 }
@@ -1694,7 +1694,7 @@ function goto_land_battle_round() {
 	if (n_us_mar + n_ar_inf === 0) {
 		delete game.marine_sharpshooters;
 		delete game.lieutenant_obannon_leads_the_charge;
-		return goto_game_over(TR, "Hamet\u{2019}s Army has been eliminated.");
+		return goto_game_over(TR, "Hamet\u{2019}s Army was eliminated.");
 	}
 
 	if (n_tr_inf === 0) {

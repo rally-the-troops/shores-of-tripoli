@@ -421,14 +421,14 @@ function count_pieces(list, where) {
 }
 
 function discard_card(player, card, reason = "") {
-	log(game.active + " discards a card" + reason + ".");
+	log(game.active + " discarded a card" + reason + ".");
 	remove_from_array(player.hand, card);
 	player.discard.push(card);
 	game.active_card = game.active;
 }
 
 function play_card(player, card) {
-	log(game.active + " plays \u{201c}" + CARD_NAMES[card] + "\u{201d}.");
+	log(game.active + " played \u{201c}" + CARD_NAMES[card] + "\u{201d}.");
 	remove_from_array(player.core, card);
 	remove_from_array(player.hand, card);
 	remove_from_array(player.discard, card);
@@ -438,7 +438,7 @@ function play_card(player, card) {
 }
 
 function play_battle_card(player, card) {
-	log(game.active + " plays \u{201c}" + CARD_NAMES[card] + "\u{201d}.");
+	log(game.active + " played \u{201c}" + CARD_NAMES[card] + "\u{201d}.");
 	remove_from_array(player.hand, card);
 }
 
@@ -699,9 +699,9 @@ states.hand_size = {
 		if (current === TR) {
 			let n = game.tr.queue.length;
 			if (n > 1)
-				log(current + " discards " + n + " cards.");
+				log(current + " discarded " + n + " cards.");
 			else if (n === 1)
-				log(current + " discards " + n + " card.");
+				log(current + " discarded " + n + " card.");
 			for (let card of game.tr.queue)
 				game.tr.discard.push(card);
 			delete game.tr.queue;
@@ -709,9 +709,9 @@ states.hand_size = {
 		if (current === US) {
 			let n = game.us.queue.length;
 			if (n > 1)
-				log(current + " discards " + n + " cards.");
+				log(current + " discarded " + n + " cards.");
 			else if (n === 1)
-				log(current + " discards " + n + " card.");
+				log(current + " discarded " + n + " card.");
 			for (let card of game.us.queue)
 				game.us.discard.push(card);
 			delete game.us.queue;
@@ -808,7 +808,7 @@ states.american_play = {
 	},
 	card_event: play_american_event,
 	pass() {
-		log(game.active + " passes.");
+		log(game.active + " passed.");
 		end_american_play();
 	}
 }
@@ -846,7 +846,7 @@ states.tripolitan_play = {
 	},
 	card_event: play_tripolitan_event,
 	pass() {
-		log(game.active + " passes.");
+		log(game.active + " passed.");
 		end_tripolitan_play();
 	}
 }
@@ -925,7 +925,7 @@ states.raid_before_hunt = {
 		play_battle_card(game.tr, card);
 		if (card === US_SIGNAL_BOOKS_OVERBOARD) {
 			let c = discard_random_card(game.us.hand, game.us.discard);
-			log("United States discards \u{201c}" + CARD_NAMES[c] + "\u{201d}.");
+			log("United States discarded \u{201c}" + CARD_NAMES[c] + "\u{201d}.");
 		}
 		if (card === HAPPY_HUNTING) {
 			game.happy_hunting = true;
@@ -940,7 +940,7 @@ states.raid_before_hunt = {
 
 function goto_pirate_raid_hunt() {
 	let corsairs = count_corsairs(game.where);
-	let merchants = roll_many_dice("Corsairs raid: ", corsairs, 5);
+	let merchants = roll_many_dice("Corsairs raided: ", corsairs, 5);
 	if (game.happy_hunting)
 		merchants += roll_many_dice("Happy Hunting: ", 3, 5);
 	delete game.happy_hunting;
@@ -990,8 +990,8 @@ function interception_roll(harbor, us_dice) {
 		let n_tr = count_tripolitan_corsairs(harbor);
 		let n_al = count_allied_corsairs(harbor);
 		let hits = 0;
-		hits += roll_many_dice("Swedish frigates intercept:\n", n_se * 2, 6);
-		hits += roll_many_dice("American frigates intercept:\n", n_us * us_dice, 6);
+		hits += roll_many_dice("Swedish frigates intercepted:\n", n_se * 2, 6);
+		hits += roll_many_dice("American frigates intercepted:\n", n_us * us_dice, 6);
 		if (hits > n_tr + n_al)
 			hits = n_tr + n_al;
 		log("Intercepted: " + hits + (hits === 1 ? " corsair." : " corsairs."));
@@ -1314,8 +1314,8 @@ function goto_naval_battle_round() {
 	game.n_us_hits += roll_many_dice("Tripolitan corsairs:\n", n_tr_corsairs, 6);
 	game.n_us_hits += roll_many_dice("Allied corsairs:\n", n_al_corsairs, 6);
 
-	log("United States scores " + game.n_tr_hits + (game.n_tr_hits === 1 ? " hit." : " hits."));
-	log("Tripolitania scores " + game.n_us_hits + (game.n_us_hits === 1 ? " hit." : " hits."));
+	log("United States scored " + game.n_tr_hits + (game.n_tr_hits === 1 ? " hit." : " hits."));
+	log("Tripolitania scored " + game.n_us_hits + (game.n_us_hits === 1 ? " hit." : " hits."));
 
 	game.summary = [];
 	if (game.save_active === US)
@@ -1474,7 +1474,7 @@ function resume_naval_battle() {
 		let n_tr = count_tripolitan_frigates(game.where) + count_tripolitan_corsairs(game.where);
 		let n_us = count_american_frigates(game.where) + count_american_gunboats(game.where);
 		if (n_tr === 0) {
-			log("The Tripolitan fleet has been eliminated.");
+			log("The Tripolitan fleet was eliminated.");
 			move_all_pieces(US_MARINES, BENGHAZI, TRIPOLI);
 			move_all_pieces(AR_INFANTRY, BENGHAZI, TRIPOLI);
 
@@ -1491,7 +1491,7 @@ function resume_naval_battle() {
 			return;
 		}
 		if (n_us === 0) {
-			log("The American fleet has been eliminated.");
+			log("The American fleet was eliminated.");
 			return goto_game_over(TR, "Assault on Tripoli failed.");
 		}
 		return goto_naval_battle_round();
@@ -1548,7 +1548,7 @@ states.land_battle_move_frigates = {
 	},
 	next() {
 		let n = count_american_frigates(game.where);
-		log(n + " American frigates move to " + SPACES[game.where] + ".");
+		log(n + " American frigates moved to " + SPACES[game.where] + ".");
 		if (is_naval_bombardment_location(game.where)) {
 			move_all_pieces(US_GUNBOATS, MALTA, game.where);
 			naval_bombardment_round();
@@ -1698,7 +1698,7 @@ function goto_land_battle_round() {
 	}
 
 	if (n_tr_inf === 0) {
-		log("Americans have captured " + SPACES[game.where] + ".");
+		log("Americans captured " + SPACES[game.where] + ".");
 		delete game.marine_sharpshooters;
 		delete game.lieutenant_obannon_leads_the_charge;
 		if (game.active_card === ASSAULT_ON_TRIPOLI)
@@ -1939,7 +1939,7 @@ states.murad_reis_overboard = {
 	card_event(card) {
 		play_battle_card(game.tr, card);
 		let c = discard_random_card(game.us.hand, game.us.discard);
-		log("United States discards \u{201c}" + CARD_NAMES[c] + "\u{201d}.");
+		log("United States discarded \u{201c}" + CARD_NAMES[c] + "\u{201d}.");
 		end_tripolitan_play();
 	},
 	next() {
@@ -2069,14 +2069,14 @@ states.storms = {
 			log("No effect.");
 		}
 		if (n > 0) {
-			log("One American frigate sinks.");
+			log("One American frigate sank.");
 			move_one_piece(US_FRIGATES, space, TRIPOLITAN_SUPPLY);
 		}
 		if (n > 1) {
 			if (n === 2)
-				log("One American frigate is damaged.");
+				log("One American frigate was damaged.");
 			else
-				log(n + " American frigates are damaged.");
+				log(n + " American frigates were damaged.");
 			for (let i = 1; i < n; ++i) {
 				if (game.year === 1806)
 					move_one_piece(US_FRIGATES, space, UNITED_STATES_SUPPLY);
@@ -2158,11 +2158,11 @@ function end_the_philadelphia_runs_aground(two) {
 	let roll = roll_d6();
 	if (two) {
 		let b = roll_d6();
-		log("Tripolitania rolls " + roll + ", " + b + ".");
+		log("Tripolitania rolled " + roll + ", " + b + ".");
 		if (b > roll)
 			roll = b;
 	} else {
-		log("Tripolitania rolls " + roll + ".");
+		log("Tripolitania rolled " + roll + ".");
 	}
 	switch (roll) {
 	case 1: case 2:
@@ -2608,17 +2608,17 @@ function end_burn_the_philadelphia(two) {
 	}
 	switch (roll) {
 	case 1: case 2:
-		log("1-2: The raid is a failure.");
+		log("1-2: The raid failed.");
 		break;
 	case 3: case 4:
-		log("3-4: A Tripolitan frigate is damaged.");
+		log("3-4: One Tripolitan frigate damaged.");
 		if (game.year === 1806)
 			move_one_piece(TR_FRIGATES, TRIPOLI, TRIPOLITAN_SUPPLY);
 		else
 			move_one_piece(TR_FRIGATES, TRIPOLI, YEAR_TURN_TRACK[game.year + 1]);
 		break;
 	case 5: case 6:
-		log("5-6: A Tripolitan frigate is sunk.");
+		log("5-6: One Tripolitan frigate sunk.");
 		move_one_piece(TR_FRIGATES, TRIPOLI, TRIPOLITAN_SUPPLY);
 		break;
 	}
@@ -2668,18 +2668,18 @@ function end_launch_the_intrepid(two) {
 	}
 	switch (roll) {
 	case 1: case 2:
-		log("1-2: The raid is a failure.");
+		log("1-2: The raid failed.");
 		break;
 	case 3: case 4:
-		log("3-4: One Tripolitan corsair is sunk.");
+		log("3-4: One Tripolitan corsair sunk.");
 		move_one_piece(TR_CORSAIRS, TRIPOLI, TRIPOLITAN_SUPPLY);
 		break;
 	case 5: case 6:
 		if (count_tripolitan_frigates(TRIPOLI) > 0) {
-			log("5-6: One Tripolitan frigate is sunk.");
+			log("5-6: One Tripolitan frigate sunk.");
 			move_one_piece(TR_FRIGATES, TRIPOLI, TRIPOLITAN_SUPPLY);
 		} else {
-			log("5-6: Two Tripolitan corsairs are sunk.");
+			log("5-6: Two Tripolitan corsairs sunk.");
 			move_one_piece(TR_CORSAIRS, TRIPOLI, TRIPOLITAN_SUPPLY);
 			move_one_piece(TR_CORSAIRS, TRIPOLI, TRIPOLITAN_SUPPLY);
 		}

@@ -8,6 +8,7 @@ body.United_States header.your_turn { background-color: skyblue; }
 #role_Tripolitania .role_name { background-color: salmon; }
 
 #log { background-color: #eee; }
+#log div { padding-left: 20px; text-indent: -12px; }
 #log .year { background-color: #777; color: white; font-weight: bold; padding:3px; text-align: center; }
 #log .season { background-color: #ccc; color: #444; font-weight: bold; padding:3px; text-align: center; }
 #log .raid, .battle { text-decoration: underline; font-style: italic; font-weight: bold; }
@@ -18,10 +19,16 @@ body.United_States header.your_turn { background-color: skyblue; }
 #log .us_tip:hover, #log .tr_tip:hover { text-decoration: underline; }
 
 .hand {
+	display: flex;
+	flex-wrap: wrap;
 	min-height: 300px;
 	justify-content: left;
 	max-width: 2476px;
 	margin: 15px auto;
+}
+
+.hand .card {
+	margin: 10px;
 }
 
 .hand_separator {
@@ -31,7 +38,17 @@ body.United_States header.your_turn { background-color: skyblue; }
 body.Observer #hand_cards { display: none; }
 body.Observer .hand_separator { display: none; }
 
+.role_vp {
+	float: right;
+}
+
+.role_info, .card_info {
+	border-bottom: 1px solid black;
+}
+
 .card {
+	background-size: cover;
+	background-repeat: no-repeat;
 	width: 250px;
 	height: 350px;
 	border-radius: 12px;
@@ -46,6 +63,14 @@ body.Observer .hand_separator { display: none; }
 .card.blank {
 	background-color: dimgray;
 	transform: none !important;
+}
+
+.card.enabled {
+	cursor: pointer;
+}
+
+.card.disabled {
+	filter: grayscale(100%);
 }
 
 .card_info {

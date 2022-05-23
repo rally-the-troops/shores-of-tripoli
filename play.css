@@ -215,6 +215,29 @@ svg circle, .piece {
 body.Tripolitania #popup div.tr_always { display: block; }
 body.United_States #popup div.us_always { display: block; }
 
+/* MOBILE PHONE LAYOUT */
+
+@media (max-width: 640px) {
+	.hand .card {
+		width: 125px;
+		height: 175px;
+		border-radius: 6px;
+	}
+	.hand {
+		min-height: 125px;
+	}
+	.hand_separator {
+		display: none;
+	}
+	#core_cards {
+		background-color: darkslategray;
+	}
+	#tooltip.card {
+		top: 10px;
+		right: 10px;
+	}
+}
+
 /* CARD IMAGES */
 
 .card {
